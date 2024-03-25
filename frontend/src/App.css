@@ -1,42 +1,71 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+:root {
+  --bg-color: #f6f3f3;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a {
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/*------------------------------ Outer Container --------------------------------- */
+.app {
+  background-color: var(--bg-color);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.card {
-  padding: 2em;
+/*------------------------------ Chat Container ------------------------------- */
+.main-container {
+  background-color: aliceblue;
+  height: 98vh;
+  width: 98vw;
+  border-radius: 20px;
+  display: flex;
+  padding: 5px;
 }
 
-.read-the-docs {
-  color: #888;
+/*--------------------------------- Side Bar ---------------------------------- */
+.side-bar-container {
+  flex: 0.3;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-bar-box {
+  background-color: #fff;
+  padding: 10px 7px;
+  border-radius: 30px;
+  margin: 5px;
+}
+.search-box{
+    display: flex;
+    align-items: center;
+}
+.search-box input{
+    outline-width: 0;
+    flex: 1;
+    border: none;
+    margin-left: 10px;
+    font-size: 1.1rem;
+}
+.quickmenus {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.conversations{
+    flex: 1;
+}
+/*--------------------------------- Chat Box ---------------------------------- */
+.chat-container {
+  background-color: blue;
+  flex: 0.7;
 }
