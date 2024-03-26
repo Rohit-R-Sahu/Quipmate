@@ -1,40 +1,38 @@
 import { IconButton } from "@mui/material";
-import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
-import PersonAddAltOutlinedIcon from "@mui/icons-material/PersonAddAltOutlined";
-import GroupAddOutlinedIcon from "@mui/icons-material/GroupAddOutlined";
-import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
-import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import Conversation from "./Conversation";
+import { useState } from "react";
 const SideBar = () => {
+  const [conversations, setConversations] = useState([
+    {
+      name: "Test#1",
+      lastMessage: "Last Message #1",
+      timeStamp: "today",
+    },
+    {
+      name: "Rest#2",
+      lastMessage: "Last Message #2",
+      timeStamp: "today",
+    },
+    ,
+    {
+      name: "Fest#3",
+      lastMessage: "Last Message #3",
+      timeStamp: "today",
+    },
+  ]);
   return (
     <div className="side-bar-container">
-      <div className="quickmenus side-bar-box">
-        <div>
-          <IconButton>
-            <AccountCircleOutlinedIcon />
-          </IconButton>
-        </div>
-        <div>
-          <IconButton>
-            <PersonAddAltOutlinedIcon />
-          </IconButton>
-          <IconButton>
-            <GroupAddOutlinedIcon />
-          </IconButton>
-          <IconButton>
-            <AddCircleOutlineOutlinedIcon />
-          </IconButton>
-          <IconButton>
-            <DarkModeOutlinedIcon />
-          </IconButton>
-        </div>
-      </div>
-      <div className="side-bar-box conversations">chat list</div>
       <div className="side-bar-box search-box">
         <input type="text" placeholder="search" />
         <IconButton>
           <SearchOutlinedIcon />
         </IconButton>
+      </div>
+      <div className="side-bar-box conversations">
+        {conversations.map((conversation, index) => (
+          <Conversation conversations={conversation} key={index} />
+        ))}
       </div>
     </div>
   );

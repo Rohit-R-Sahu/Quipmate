@@ -1,6 +1,5 @@
 import "./App.css";
 import MainChat from "./components/MainChat";
-
 function App() {
   return (
     <>
